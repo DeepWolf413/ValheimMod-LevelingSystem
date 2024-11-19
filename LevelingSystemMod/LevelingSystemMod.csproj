@@ -50,8 +50,8 @@
         <Reference Include="System.Xml.Linq" />
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="PluginConfig.cs" />
-        <Compile Include="PluginMain.cs" />
+        <Compile Include="ModConfiguration.cs" />
+        <Compile Include="Main.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <ItemGroup>

@@ -1,16 +1,16 @@
 ﻿using System.Reflection;
 using System.Runtime.InteropServices;
-using LevelingSystemMod;
+using Valheim.LevelingSystem;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle(PluginConfig.Name)]
-[assembly: AssemblyDescription(PluginConfig.ShortDescription)]
+[assembly: AssemblyTitle(ModConfiguration.Name)]
+[assembly: AssemblyDescription(ModConfiguration.ShortDescription)]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany(PluginConfig.Author)]
-[assembly: AssemblyProduct(PluginConfig.Name)]
-[assembly: AssemblyCopyright("Copyright © " + PluginConfig.Author + " 2024")]
+[assembly: AssemblyCompany(ModConfiguration.Author)]
+[assembly: AssemblyProduct(ModConfiguration.Name)]
+[assembly: AssemblyCopyright("Copyright © " + ModConfiguration.Author + " 2024")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -32,5 +32,5 @@ using LevelingSystemMod;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion(PluginConfig.Version)]
-[assembly: AssemblyFileVersion(PluginConfig.Version)]
+[assembly: AssemblyVersion(ModConfiguration.Version)]
+[assembly: AssemblyFileVersion(ModConfiguration.Version)]
