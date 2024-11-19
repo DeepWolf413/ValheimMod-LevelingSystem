@@ -20,7 +20,7 @@ outdir = "./build"
 
 [[build.copy]]
 source = "./dist"
-target = ""
+target = "./plugins"
 
 
 [publish]
