@@ -9,6 +9,8 @@ namespace LevelingSystemMod
     [BepInPlugin(PluginConfig.Guid, PluginConfig.Name, PluginConfig.Version)]
     public class PluginMain : BaseUnityPlugin
     {
+        public static PluginConfig ConfigStorage = new PluginConfig();
+        
         private void Awake()
         {
             

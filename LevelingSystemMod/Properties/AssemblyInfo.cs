@@ -1,15 +1,16 @@
 ﻿using System.Reflection;
 using System.Runtime.InteropServices;
+using LevelingSystemMod;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("LevelingSystemMod")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle(PluginConfig.Name)]
+[assembly: AssemblyDescription(PluginConfig.ShortDescription)]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("DeepWolf413")]
-[assembly: AssemblyProduct("LevelingSystemMod")]
-[assembly: AssemblyCopyright("Copyright © DeepWolf413 2024")]
+[assembly: AssemblyCompany(PluginConfig.Author)]
+[assembly: AssemblyProduct(PluginConfig.Name)]
+[assembly: AssemblyCopyright("Copyright © " + PluginConfig.Author + " 2024")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -31,5 +32,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion(PluginConfig.Version)]
+[assembly: AssemblyFileVersion(PluginConfig.Version)]
