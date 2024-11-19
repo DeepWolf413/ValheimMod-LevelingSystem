@@ -19,7 +19,10 @@ param (
     [switch]$QuickBuild,
 
     [Parameter(Mandatory = $false, HelpMessage = "Immediately initiates the publish process to Thunderstore. Ignored if the package hasn't been initialized yet.")]
-    [switch]$QuickPublish
+    [switch]$QuickPublish,
+    
+    [Parameter(Mandatory = $false)]
+    [switch]$NoConfirm
 )
 begin {
     New-Variable -Name THUNDERSTORE_CONFIG_FILEPATH -Value "$PSScriptRoot\thunderstore.toml" -Option Constant -Scope Local
@@ -53,8 +56,7 @@ process {
         if (-not $QuickBuild -and -not $QuickPublish) {
             Write-Host "[B] - Build | [P] - Publish | [Q] - Quit"
             $Answer = Read-Host
-        }
-        else {
+        } elseif (-not $NoConfirm) {
             Write-Host "[Enter] - Continue | [Q] - Quit"
             $Answer = Read-Host
         }
