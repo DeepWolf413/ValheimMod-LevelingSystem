@@ -1,0 +1,32 @@
+[config]
+schemaVersion = "1.0.0"
+
+[package]
+namespace = "DeepWolf413"
+name = "LevelingSystem"
+versionNumber = "1.0.0"
+description = "Example mod description"
+websiteUrl = "https://thunderstore.io"
+containsNsfwContent = false
+[package.dependencies]
+denikson-BepInExPack_Valheim = "5.4.2202"
+ValheimModding-Jotunn = "2.21.3"
+
+
+[build]
+icon = "./icon.png"
+readme = "./README.md"
+outdir = "./build"
+
+[[build.copy]]
+source = "./dist"
+target = ""
+
+
+[publish]
+repository = "https://thunderstore.io"
+communities = [ "valheim" ]
+[publish.categories]
+valheim = [ "bog-witch-update", "mods" ]
+
+
