@@ -40,7 +40,8 @@ namespace Valheim.LevelingSystem
         public ConfigEntry<bool> UseCustomLevelTable { get; private set; }
 		public ConfigEntry<int> MaxLevel { get; private set; }
 		public ConfigEntry<int> TotalExperience { get; private set; }
-		
+		public ConfigEntry<bool> UseCustomCreatureXpTable { get; private set; }
+		public ConfigEntry<int> MinimumKillXp { get; private set; }
 		
         internal void Initialize(ConfigFile configFile)
         {
@@ -51,6 +52,8 @@ namespace Valheim.LevelingSystem
 	        UseCustomLevelTable = configFile.Bind("General", "UseCustomLevelTable", false, "Whether to use a custom level table. If false, uses the procedural level table.");
 	        MaxLevel = configFile.Bind("General", "MaxLevel", 20, new ConfigDescription("The highest level a character can reach. Ignored if UseCustomLevelTable is true.", generalAcceptableValueRange));
 	        TotalExperience = configFile.Bind("General", "TotalExperience", 100000, new ConfigDescription("The total amount of experience a character needs to reach the max level. Ignored if UseCustomLevelTable is true.", generalAcceptableValueRange));
+	        UseCustomCreatureXpTable = configFile.Bind("General", "UseCustomMonsterXpTable", false, "Whether to use a custom creature xp table. If true, uses the custom creature xp table AND the procedural creature xp table, meaning that if there's a creature that you haven't specified in the custom creature xp table, it will use the one from the procedural creature xp table. If false, only the procedural creature xp table will be used.");
+	        MinimumKillXp = configFile.Bind("General", "MinimumKillXp", 0, new ConfigDescription("The minimum amount of experience a creature can give when killed. Ignored if UseCustomCreatureXpTable is true AND the killed creature is specified in the custom creature xp table.", generalAcceptableValueRange));
 	        
 	        Jotunn.Logger.LogInfo("Successfully loaded config.");
 	        Save(configFile);
@@ -65,6 +68,7 @@ namespace Valheim.LevelingSystem
 			}
 			
 			configFile.Save();
+			Jotunn.Logger.LogDebug("Successfully saved config.");
 		}
     }
 }
